@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Pips Signals — Professional Forex Trading Signals</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-dark: #0a0a0a;
+            --primary-blue: #1e40af;
+            --secondary-blue: #3b82f6;
+            --accent-silver: #e2e8f0;
+            --accent-green: #10b981;
+            --accent-red: #ef4444;
+            --text-light: #ffffff;
+            --text-gray: #9ca3af;
+            --card-bg: rgba(30, 58, 138, 0.15);
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(147, 51, 234, 0.1) 0%, transparent 50%),
+                linear-gradient(135deg, var(--primary-dark) 0%, #111 100%);
+        }
+
+        .chart-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            padding: 8px 20px;
+            border-radius: 50px;
+            margin-bottom: 25px;
+            font-size: 0.9rem;
+            color: var(--secondary-blue);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-badge i {
+            font-size: 1rem;
+        }
+
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, var(--text-light) 0%, var(--secondary-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .mega-cta {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            padding: 22px 50px;
+            background: linear-gradient(135deg, var(--secondary-blue), #60a5fa);
+            color: var(--text-light);
+            font-size: 1.3rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 
+                0 10px 30px rgba(59, 130, 246, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            animation: megaPulse 2s infinite;
+            overflow: hidden;
+        }
+
+        .mega-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s;
+        }
+
+        .mega-cta:hover::before {
+            left: 100%;
+        }
+
+        .mega-cta:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 
+                0 20px 40px rgba(59, 130, 246, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .mega-cta .cta-icon {
+            display: inline-block;
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+        }
+
+        .cta-subtext {
+            margin-top: 20px;
+            font-size: 1.1rem;
+            color: var(--accent-green);
+            font-weight: 500;
+            padding: 12px 25px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 12px;
+            display: inline-block;
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+
+        .cta-subtext i {
+            margin-right: 8px;
+            color: var(--accent-green);
+        }
+
+        @keyframes megaPulse {
+            0%, 100% { 
+                box-shadow: 
+                    0 10px 30px rgba(59, 130, 246, 0.4),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            }
+            50% { 
+                box-shadow: 
+                    0 15px 40px rgba(59, 130, 246, 0.8),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .floating-element:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            font-size: 2rem;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            top: 60%;
+            right: 10%;
+            font-size: 2.5rem;
+            animation-delay: 5s;
+        }
+
+        .floating-element:nth-child(3) {
+            bottom: 20%;
+            left: 15%;
+            font-size: 1.8rem;
+            animation-delay: 10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(5deg); }
+            50% { transform: translateY(0) rotate(-5deg); }
+            75% { transform: translateY(20px) rotate(3deg); }
+        }
+
+        /* Sections */
+        section {
+            padding: 40px 0;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-blue), #60a5fa);
+            border-radius: 2px;
+        }
+
+        /* Trustpilot Reviews Slider */
+        .trustpilot-section {
+            background: 
+                radial-gradient(circle at 30% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(147, 51, 234, 0.05) 0%, transparent 50%),
+                linear-gradient(135deg, #0a0a0a 0%, #111 100%);
+            padding: 40px 0;
+            position: relative;
+        }
+
+        .trustpilot-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            gap: 20px;
+        }
+
+        .trustpilot-logo {
+            height: 45px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+
+        .trustpilot-rating {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .trustpilot-stars {
+            color: #00b67a;
+            font-size: 1.8rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .trustpilot-score {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+
+        .trustpilot-reviews-count {
+            color: var(--text-gray);
+            font-size: 1rem;
+        }
+
+        .review-slider {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+
+        .review-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .trustpilot-review {
+            min-width: 100%;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.2) 0%, rgba(59, 130, 246, 0.1) 100%);
+            border-radius: 20px;
+            padding: 25px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            backdrop-filter: blur(20px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trustpilot-review::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-blue), #60a5fa);
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .reviewer-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            flex-shrink: 0;
+        }
+
+        .reviewer-info {
+            flex: 1;
+        }
+
+        .reviewer-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .review-date {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        .review-rating {
+            color: #00b67a;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+
+        .review-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+            color: var(--secondary-blue);
+        }
+
+        .review-text {
+            color: var(--text-gray);
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .review-verified {
+            display: inline-flex;
+            align-items: center;
+            color: #00b67a;
+            font-size: 0.9rem;
+            margin-top: 12px;
+            gap: 8px;
+        }
+
+        .review-verified i {
+            font-size: 0.9rem;
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .slider-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .slider-dot.active {
+            background: var(--secondary-blue);
+            transform: scale(1.3);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .slider-dot:hover {
+            background: rgba(59, 130, 246, 0.5);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: 
+                radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 70%),
+                linear-gradient(135deg, #111 0%, #0a0a0a 100%);
+            padding: 40px 0;
+            position: relative;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.2) 0%, rgba(59, 130, 246, 0.1) 100%);
+            border-radius: 20px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            backdrop-filter: blur(20px);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .stat-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-blue), #60a5fa);
+        }
+
+        .stat-box::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent, rgba(59, 130, 246, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .stat-box:hover::after {
+            opacity: 1;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+            border-color: var(--secondary-blue);
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-blue);
+            margin-bottom: 12px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-green), #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        /* Form Section */
+        .form-section {
+            background: 
+                radial-gradient(circle at 70% 30%, rgba(147, 51, 234, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 30% 70%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+                linear-gradient(135deg, #0a0a0a 0%, #111 100%);
+            padding: 40px 0;
+            position: relative;
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.2) 0%, rgba(59, 130, 246, 0.1) 100%);
+            border-radius: 24px;
+            padding: 45px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            backdrop-filter: blur(20px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-blue), #60a5fa);
+        }
+
+        .form-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-gray);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 18px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 12px;
+            color: var(--text-light);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--secondary-blue);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .form-button {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, var(--secondary-blue), #60a5fa);
+            color: var(--text-light);
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .form-button:hover::before {
+            left: 100%;
+        }
+
+        .form-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(59, 130, 246, 0.3);
+        }
+
+        .form-message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            display: none;
+        }
+
+        .form-message.success {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--accent-green);
+        }
+
+        .form-message.error {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: var(--accent-red);
+        }
+
+        /* Telegram CTA Section */
+        .telegram-cta-section {
+            background: linear-gradient(135deg, #0a0a0a 0%, #111 100%);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .telegram-cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 40px;
+            background: linear-gradient(135deg, #0088cc, #00a8e8);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 136, 204, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .telegram-cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .telegram-cta-button:hover::before {
+            left: 100%;
+        }
+
+        .telegram-cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0, 136, 204, 0.6);
+        }
+
+        .telegram-cta-button i {
+            font-size: 1.3rem;
+        }
+
+        /* Disclaimer */
+        .disclaimer {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 30px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .disclaimer-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            padding: 30px 0 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-blue);
+            transform: translateY(-2px);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .social-icon.telegram:hover {
+            background: #0088cc;
+        }
+
+        .social-icon.instagram:hover {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        .social-icon.facebook:hover {
+            background: #1877f2;
+        }
+
+        /* Scroll to Top */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--secondary-blue), #60a5fa);
+            color: var(--text-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .mega-cta {
+                padding: 18px 35px;
+                font-size: 1.1rem;
+            }
+
+            .cta-subtext {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .trustpilot-header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .stat-box {
+                padding: 25px 20px;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <canvas class="chart-background" id="chartCanvas"></canvas>
+        
+        <!-- Floating Elements -->
+        <div class="floating-element">📈</div>
+        <div class="floating-element">💰</div>
+        <div class="floating-element">📊</div>
+        
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-check-circle"></i>
+                <span>100% FREE - No Payment Required</span>
+            </div>
+            <h1>Free Forex Signals That Actually Work</h1>
+            <p>Join 1,500+ traders receiving profitable daily signals in our exclusive Telegram channel</p>
+            <a href="https://t.me/royal_pips_signals" target="_blank" class="mega-cta" id="joinTelegram">
+                <span class="cta-icon">🚀</span>
+                Join FREE Telegram Channel
+            </a>
+            <div class="cta-subtext">
+                <i class="fas fa-shield-alt"></i>
+                You can test our signals on your demo account and see profitable results.
+            </div>
+        </div>
+    </section>
+
+    <!-- Trustpilot Reviews Section -->
+    <section class="trustpilot-section">
+        <div class="container">
+            <div class="trustpilot-header">
+                <svg class="trustpilot-logo" viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.5 5.5L13.5 14.5L22.5 14.5L15.5 19.5L18.5 28.5L10.5 22.5L2.5 28.5L5.5 19.5L-1.5 14.5L7.5 14.5L10.5 5.5Z" fill="#00B67A"/>
+                    <path d="M38.5 5.5L41.5 14.5L50.5 14.5L43.5 19.5L46.5 28.5L38.5 22.5L30.5 28.5L33.5 19.5L26.5 14.5L35.5 14.5L38.5 5.5Z" fill="#00B67A"/>
+                    <path d="M66.5 5.5L69.5 14.5L78.5 14.5L71.5 19.5L74.5 28.5L66.5 22.5L58.5 28.5L61.5 19.5L54.5 14.5L63.5 14.5L66.5 5.5Z" fill="#00B67A"/>
+                    <path d="M94.5 5.5L97.5 14.5L106.5 14.5L99.5 19.5L102.5 28.5L94.5 22.5L86.5 28.5L89.5 19.5L82.5 14.5L91.5 14.5L94.5 5.5Z" fill="#00B67A"/>
+                    <path d="M122.5 5.5L125.5 14.5L134.5 14.5L127.5 19.5L130.5 28.5L122.5 22.5L114.5 28.5L117.5 19.5L110.5 14.5L119.5 14.5L122.5 5.5Z" fill="#00B67A"/>
+                </svg>
+                <div class="trustpilot-rating">
+                    <div class="trustpilot-score">4.7</div>
+                    <div class="trustpilot-reviews-count">Based on 137 reviews</div>
+                </div>
+            </div>
+            
+            <div class="review-slider">
+                <div class="review-track" id="reviewTrack">
+                    <div class="trustpilot-review">
+                        <div class="review-header">
+                            <div class="reviewer-avatar" style="background: linear-gradient(135deg, #FF6B6B, #FF8E53);">AM</div>
+                            <div class="reviewer-info">
+                                <div class="reviewer-name">Alexandra Mitchell</div>
+                                <div class="review-date">3 days ago</div>
+                            </div>
+                        </div>
+                        <div class="review-rating">★★★★★</div>
+                        <div class="review-title">Best FREE signals on Telegram!</div>
+                        <div class="review-text">
+                            I can't believe these signals are completely free! The accuracy is amazing - I've made 450+ pips this week alone. The admin explains each setup clearly.
+                        </div>
+                        <div class="review-verified">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Verified review</span>
+                        </div>
+                    </div>
+                    
+                    <div class="trustpilot-review">
+                        <div class="review-header">
+                            <div class="reviewer-avatar" style="background: linear-gradient(135deg, #4ECDC4, #44A08D);">MT</div>
+                            <div class="reviewer-info">
+                                <div class="reviewer-name">Marcus Thompson</div>
+                                <div class="review-date">1 week ago</div>
+                            </div>
+                        </div>
+                        <div class="review-rating">★★★★★</div>
+                        <div class="review-title">Consistent profits from free signals</div>
+                        <div class="review-text">
+                            Been in the Telegram channel for 3 months and the results speak for themselves. Daily signals with clear entries, exits, and stop losses. Made $2,300 last month.
+                        </div>
+                        <div class="review-verified">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Verified review</span>
+                        </div>
+                    </div>
+                    
+                    <div class="trustpilot-review">
+                        <div class="review-header">
+                            <div class="reviewer-avatar" style="background: linear-gradient(135deg, #FFD93D, #FCB045);">SC</div>
+                            <div class="reviewer-info">
+                                <div class="reviewer-name">Sophia Chen</div>
+                                <div class="review-date">2 weeks ago</div>
+                            </div>
+                        </div>
+                        <div class="review-rating">★★★★★</div>
+                        <div class="review-title">Game changer for my trading</div>
+                        <div class="review-text">
+                            The free Telegram channel is pure gold! Signals are posted early with detailed analysis. I've learned so much just by following their trades. Hit 85% win rate this month.
+                        </div>
+                        <div class="review-verified">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Verified review</span>
+                        </div>
+                    </div>
+                    
+                    <div class="trustpilot-review">
+                        <div class="review-header">
+                            <div class="reviewer-avatar" style="background: linear-gradient(135deg, #A8E6CF, #7FD1B9);">JR</div>
+                            <div class="reviewer-info">
+                                <div class="reviewer-name">James Rodriguez</div>
+                                <div class="review-date">3 weeks ago</div>
+                            </div>
+                        </div>
+                        <div class="review-rating">★★★★★</div>
+                        <div class="review-title">Professional signals for FREE!</div>
+                        <div class="review-text">
+                            I've paid for signal services before but none compare to this free channel. The quality is top-notch with proper risk management. Made 180 pips today on EUR/USD alone.
+                        </div>
+                        <div class="review-verified">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Verified review</span>
+                        </div>
+                    </div>
+                    
+                    <div class="trustpilot-review">
+                        <div class="review-header">
+                            <div class="reviewer-avatar" style="background: linear-gradient(135deg, #C9B1FF, #8B5CF6);">EW</div>
+                            <div class="reviewer-info">
+                                <div class="reviewer-name">Emily Watson</div>
+                                <div class="review-date">1 month ago</div>
+                            </div>
+                        </div>
+                        <div class="review-rating">★★★★★</div>
+                        <div class="review-title">Finally profitable with forex</div>
+                        <div class="review-text">
+                            After losing money for months, I found this Telegram channel. The free signals are incredibly accurate and the admin actually teaches you why. Turned my $500 account into $1,200.
+                        </div>
+                        <div class="review-verified">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Verified review</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slider-controls">
+                <span class="slider-dot active" data-slide="0"></span>
+                <span class="slider-dot" data-slide="1"></span>
+                <span class="slider-dot" data-slide="2"></span>
+                <span class="slider-dot" data-slide="3"></span>
+                <span class="slider-dot" data-slide="4"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <div class="stat-number" data-target="89">0</div>
+                    <div class="stat-label">% Win Rate</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number" data-target="1500">0</div>
+                    <div class="stat-label">+ Members</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-number" data-target="2500">0</div>
+                    <div class="stat-label">Monthly Pips</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <div class="stat-number" data-target="100">0</div>
+                    <div class="stat-label">% FREE</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="form-section">
+        <div class="container">
+            <h2 class="section-title">Stay Updated</h2>
+            <div class="form-container">
+                <h3 class="form-title">Get Exclusive Trading Tips</h3>
+                <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Your Email</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                    </div>
+                    <button type="submit" class="form-button">Subscribe for Updates</button>
+                </form>
+                <div id="formMessage" class="form-message"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Telegram CTA Section -->
+    <section class="telegram-cta-section">
+        <div class="container">
+            <a href="https://t.me/royal_pips_signals" target="_blank" class="telegram-cta-button">
+                <i class="fab fa-telegram"></i>
+                Join Our Telegram Channel Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Disclaimer -->
+    <section class="disclaimer">
+        <div class="container">
+            <div class="disclaimer-content">
+                <p>Royal Pips Signals shares educational trade ideas only. Trading involves risk; always trade responsibly. We are not financial advisors.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="https://t.me/royal_pips_signals" target="_blank">Join Telegram</a>
+                    <a href="#disclaimer">Disclaimer</a>
+                </div>
+                <div class="social-icons">
+                    <a href="https://t.me/royal_pips_signals" target="_blank" class="social-icon telegram">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a href="https://www.instagram.com/royal_pips_signals?igsh=MTZqMmJta3Y3ZTNjdA%3D%3D&utm_source=qr" target="_blank" class="social-icon instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/share/1FpQiwZ7QJ/?mibextid=wwXIfr" target="_blank" class="social-icon facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 Royal Pips Signals. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Chart Background - Static Design
+        const canvas = document.getElementById('chartCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            drawStaticChart();
+        }
+        
+        function drawStaticChart() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Create a grid of small candlesticks
+            const candleWidth = 15;
+            const candleSpacing = 40;
+            const rows = 5;
+            const cols = Math.floor(canvas.width / candleSpacing);
+            
+            for (let row = 0; row < rows; row++) {
+                for (let col = 0; col < cols; col++) {
+                    const x = col * candleSpacing + 20;
+                    const y = (row + 1) * (canvas.height / (rows + 1));
+                    
+                    // Random height for variety
+                    const height = 30 + Math.random() * 40;
+                    const isGreen = Math.random() > 0.5;
+                    
+                    // Draw wick
+                    ctx.beginPath();
+                    ctx.moveTo(x, y - height/2 - 10);
+                    ctx.lineTo(x, y + height/2 + 10);
+                    ctx.strokeStyle = isGreen ? 'rgba(16, 185, 129, 0.3)' : 'rgba(239, 68, 68, 0.3)';
+                    ctx.lineWidth = 1;
+                    ctx.stroke();
+                    
+                    // Draw body
+                    ctx.fillStyle = isGreen ? 'rgba(16, 185, 129, 0.3)' : 'rgba(239, 68, 68, 0.3)';
+                    ctx.fillRect(x - candleWidth/2, y - height/2, candleWidth, height);
+                }
+            }
+            
+            // Add some floating chart elements
+            for (let i = 0; i < 20; i++) {
+                const x = Math.random() * canvas.width;
+                const y = Math.random() * canvas.height;
+                const radius = 1 + Math.random() * 2;
+                
+                ctx.beginPath();
+                ctx.arc(x, y, radius, 0, Math.PI * 2);
+                ctx.fillStyle = rgba(59, 130, 246, ${0.1 + Math.random() * 0.2});
+                ctx.fill();
+            }
+            
+            // Add trend lines
+            ctx.beginPath();
+            ctx.moveTo(0, canvas.height * 0.3);
+            ctx.bezierCurveTo(
+                canvas.width * 0.25, canvas.height * 0.2,
+                canvas.width * 0.75, canvas.height * 0.4,
+                canvas.width, canvas.height * 0.3
+            );
+            ctx.strokeStyle = 'rgba(59, 130, 246, 0.2)';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+            
+            ctx.beginPath();
+            ctx.moveTo(0, canvas.height * 0.7);
+            ctx.bezierCurveTo(
+                canvas.width * 0.25, canvas.height * 0.6,
+                canvas.width * 0.75, canvas.height * 0.8,
+                canvas.width, canvas.height * 0.7
+            );
+            ctx.strokeStyle = 'rgba(147, 51, 234, 0.2)';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+        }
+        
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+        
+        // Review Slider
+        const reviewTrack = document.getElementById('reviewTrack');
+        const dots = document.querySelectorAll('.slider-dot');
+        let currentSlide = 0;
+        
+        function showSlide(index) {
+            currentSlide = index;
+            reviewTrack.style.transform = translateX(-${index * 100}%);
+            
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => showSlide(index));
+        });
+        
+        // Auto-rotate slides
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % dots.length;
+            showSlide(currentSlide);
+        }, 5000);
+        
+        // Counter Animation - Fixed to ensure it works
+        const counters = document.querySelectorAll('.stat-number');
+        const speed = 200;
+        let counted = false;
+        
+        const startCounting = () => {
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const inc = target / speed;
+                    
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 10);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+            });
+        };
+        
+        // Intersection Observer - Fixed to ensure it works
+        const observerOptions = {
+            threshold: 0.5
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !counted) {
+                    startCounting();
+                    counted = true;
+                }
+            });
+        }, observerOptions);
+        
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+        
+        // Form Submission
+        const contactForm = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(contactForm);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            
+            formMessage.textContent = Thank you, ${name}! You've been successfully subscribed.;
+            formMessage.classList.add('success');
+            formMessage.style.display = 'block';
+            
+            contactForm.reset();
+            
+            setTimeout(() => {
+                formMessage.style.display = 'none';
+                formMessage.classList.remove('success');
+            }, 5000);
+        });
+        
+        // Scroll to Top
+        const scrollTopBtn = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('active');
+            } else {
+                scrollTopBtn.classList.remove('active');
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Enhanced CTA button glow effect
+        const megaCta = document.querySelector('.mega-cta');
+        
+        setInterval(() => {
+            megaCta.style.boxShadow = '0 20px 50px rgba(59, 130, 246, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.3)';
+            setTimeout(() => {
+                megaCta.style.boxShadow = '0 10px 30px rgba(59, 130, 246, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2)';
+            }, 1500);
+        }, 4000);
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
