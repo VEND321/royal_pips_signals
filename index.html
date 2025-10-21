@@ -795,37 +795,6 @@
             background: #1877f2;
         }
 
-        /* Scroll to Top */
-        .scroll-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--secondary-blue), #60a5fa);
-            color: var(--text-light);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 1000;
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
-        }
-
-        .scroll-top.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .scroll-top:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.5);
-        }
-
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
@@ -910,6 +879,7 @@
                     <path d="M122.5 5.5L125.5 14.5L134.5 14.5L127.5 19.5L130.5 28.5L122.5 22.5L114.5 28.5L117.5 19.5L110.5 14.5L119.5 14.5L122.5 5.5Z" fill="#00B67A"/>
                 </svg>
                 <div class="trustpilot-rating">
+                    <div class="trustpilot-stars">★★★★★</div>
                     <div class="trustpilot-score">4.7</div>
                     <div class="trustpilot-reviews-count">Based on 137 reviews</div>
                 </div>
@@ -1128,11 +1098,6 @@
         </div>
     </footer>
 
-    <!-- Scroll to Top -->
-    <div class="scroll-top" id="scrollTop">
-        <i class="fas fa-arrow-up"></i>
-    </div>
-
     <script>
         // Chart Background - Static Design
         const canvas = document.getElementById('chartCanvas');
@@ -1184,7 +1149,7 @@
                 
                 ctx.beginPath();
                 ctx.arc(x, y, radius, 0, Math.PI * 2);
-                ctx.fillStyle = rgba(59, 130, 246, ${0.1 + Math.random() * 0.2});
+                ctx.fillStyle = `rgba(59, 130, 246, ${0.1 + Math.random() * 0.2})`;
                 ctx.fill();
             }
             
@@ -1222,7 +1187,7 @@
         
         function showSlide(index) {
             currentSlide = index;
-            reviewTrack.style.transform = translateX(-${index * 100}%);
+            reviewTrack.style.transform = `translateX(-${index * 100}%)`;
             
             dots.forEach((dot, i) => {
                 dot.classList.toggle('active', i === index);
@@ -1239,30 +1204,63 @@
             showSlide(currentSlide);
         }, 5000);
         
-        // Counter Animation - Fixed to ensure it works
+        // Counter Animation - Slower and in sync
         const counters = document.querySelectorAll('.stat-number');
-        const speed = 200;
         let counted = false;
         
         const startCounting = () => {
+            // Reset all counters to 0
             counters.forEach(counter => {
-                const updateCount = () => {
-                    const target = +counter.getAttribute('data-target');
-                    const count = +counter.innerText;
-                    const inc = target / speed;
-                    
-                    if (count < target) {
-                        counter.innerText = Math.ceil(count + inc);
-                        setTimeout(updateCount, 10);
-                    } else {
-                        counter.innerText = target;
-                    }
-                };
-                updateCount();
+                counter.innerText = '0';
             });
+            
+            // Animation duration in milliseconds (slower animation)
+            const duration = 3000;
+            const startTime = performance.now();
+            
+            function updateCounters(currentTime) {
+                const elapsedTime = currentTime - startTime;
+                const progress = Math.min(elapsedTime / duration, 1);
+                
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const currentValue = Math.floor(progress * target);
+                    
+                    // Special handling for percentage values
+                    if (counter.parentElement.querySelector('.stat-label').innerText.includes('%')) {
+                        counter.innerText = currentValue + '%';
+                    } 
+                    // Special handling for values with '+' sign
+                    else if (counter.parentElement.querySelector('.stat-label').innerText.includes('+')) {
+                        counter.innerText = currentValue + '+';
+                    }
+                    // Regular numbers
+                    else {
+                        counter.innerText = currentValue;
+                    }
+                });
+                
+                if (progress < 1) {
+                    requestAnimationFrame(updateCounters);
+                } else {
+                    // Ensure final values are exact
+                    counters.forEach(counter => {
+                        const target = +counter.getAttribute('data-target');
+                        if (counter.parentElement.querySelector('.stat-label').innerText.includes('%')) {
+                            counter.innerText = target + '%';
+                        } else if (counter.parentElement.querySelector('.stat-label').innerText.includes('+')) {
+                            counter.innerText = target + '+';
+                        } else {
+                            counter.innerText = target;
+                        }
+                    });
+                }
+            }
+            
+            requestAnimationFrame(updateCounters);
         };
         
-        // Intersection Observer - Fixed to ensure it works
+        // Intersection Observer
         const observerOptions = {
             threshold: 0.5
         };
@@ -1292,7 +1290,7 @@
             const name = formData.get('name');
             const email = formData.get('email');
             
-            formMessage.textContent = Thank you, ${name}! You've been successfully subscribed.;
+            formMessage.textContent = `Thank you, ${name}! You've been successfully subscribed.`;
             formMessage.classList.add('success');
             formMessage.style.display = 'block';
             
@@ -1302,24 +1300,6 @@
                 formMessage.style.display = 'none';
                 formMessage.classList.remove('success');
             }, 5000);
-        });
-        
-        // Scroll to Top
-        const scrollTopBtn = document.getElementById('scrollTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollTopBtn.classList.add('active');
-            } else {
-                scrollTopBtn.classList.remove('active');
-            }
-        });
-        
-        scrollTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
         });
         
         // Enhanced CTA button glow effect
